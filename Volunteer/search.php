@@ -1,8 +1,8 @@
 <?php
 $con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['search_submit'])){
-  $contact=$_POST['contact'];
- $query="select * from appointmenttb where contact='$contact';";
+ $location=$_POST['location'];
+ $query="select * from appointmenttb where location='$location';";
  $result=mysqli_query($con,$query);
  echo '<!DOCTYPE html>
 <html lang="en">
@@ -22,10 +22,13 @@ if(isset($_POST['search_submit'])){
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
+      <th>Age</th>
       <th>Contact</th>
-      <th>Doctor</th>
-      <th>Payment</th>
+      <th>Cancer</th>
+      <th>Cancer Stage</th>
+      <th>Sex</th>
+      <th>Location</th>
+      <th>Income</th>
     </tr>
   </thead>
   <tbody>
@@ -33,17 +36,24 @@ if(isset($_POST['search_submit'])){
   while($row=mysqli_fetch_array($result)){
     $fname=$row['fname'];
     $lname=$row['lname'];
-    $email=$row['email'];
+    $age=$row['age'];
     $contact=$row['contact'];
-    $doctor=$row['doctor'];
-    $payment=$row['payment'];
+    $cancer=$row['cancer'];
+    $cancer_stage=$row['cancer_stage'];
+    $sex=$row['sex'];
+    $location=$row['location'];
+    $income=$row['income'];
+    //$cancer=$row['cancer'];
     echo '<tr>
       <td>'.$fname.'</td>
       <td>'.$lname.'</td>
-      <td>'.$email.'</td>
+      <td>'.$age.'</td>
       <td>'.$contact.'</td>
-      <td>'.$doctor.'</td>
-      <td>'.$payment.'</td>
+      <td>'.$cancer.'</td>
+      <td>'.$cancer_stage.'</td>
+      <td>'.$sex.'</td>
+      <td>'.$location.'</td>
+      <td>'.$income.'</td>
     </tr>';
   }
 echo '</tbody></table></div> 

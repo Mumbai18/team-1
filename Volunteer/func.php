@@ -112,7 +112,7 @@ function display_admin_panel(){
                   
                    <div class="col-md-4"><label>Cancer:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
+                   <select name="cancer" class="form-control" >
                       <option value="Bladder Cancer">Bladder Cancer</option>
                       <option value="Kidney">Kidney Cancer</option>
                       <option value="Breast Cancer">Breast Cancer</option>
@@ -121,7 +121,7 @@ function display_admin_panel(){
                   
                   <div class="col-md-4"><label>Cancer Stage:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
+                   <select name="cancer_stage" class="form-control" >
                       <option value="Stage 1">Stage 1</option>
                       <option value="Stage 2">Stage 2</option>
                       <option value="Stage 3">Stage 3</option>
@@ -130,19 +130,19 @@ function display_admin_panel(){
                   </div><br><br>
                   <div class="col-md-4"><label>Sex:</label></div>
                   <div class="col-md-8">
-                    <select name="Sex" class="form-control">
+                    <select name="sex" class="form-control">
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select>
                   </div><br><br>
                    <div class="col-md-4"><label>Location :</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="Location"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control" name="location"></div><br><br>
                    <div class="col-md-4"><label>Income:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
                   
                     <div class="col-md-4"><label>Verification:</label></div>
                   <div class="col-md-8">
-                    <select name="Verify" class="form-control">
+                    <select name="verify" class="form-control">
                       <option value="verified">Verified</option>
                       <option value="not verified">Not Verified</option>
                     </select>
