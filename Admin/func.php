@@ -55,7 +55,7 @@ function display_admin_panel(){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> VCare </a>
+  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> VCare</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -86,9 +86,9 @@ function display_admin_panel(){
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Details</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Information</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">List of Hospitals</a>
 
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Inventory Details</a>
+       <a class="list-group-item list-group-item-action" id="list-attend-list" data-toggle="list" href="#list-attend" role="tab" aria-controls="settings">Feedback</a>
     </div><br>
   </div>
   <div class="col-md-8">
@@ -99,89 +99,76 @@ function display_admin_panel(){
             <div class="card-body">
               <center><h4>Fill in Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
+               
+               <div class="row">
+                 <input type="submit" class="btn btn-info" id="inputbtn" name="v_submit" value="Show All Volunteer details" align
+      ="center">       
+                </div>
+              </form><br><br>
+              
+               <form class="form-group" method="post" action="showD.php">
                 <div class="row">
-                  <div class="col-md-4"><label>First Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
-                  <div class="col-md-4"><label>Last Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Age:</label></div>
-                  <div class="col-md-8"><input type="text"  class="form-control" name="age"></div><br><br>
-                  <div class="col-md-4"><label>Contact Number:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
-                  
-                   <div class="col-md-4"><label>Cancer:</label></div>
-                  <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="Bladder Cancer">Bladder Cancer</option>
-                      <option value="Kidney">Kidney Cancer</option>
-                      <option value="Breast Cancer">Breast Cancer</option>
-                    </select>
-                  </div><br><br>
-                  
-                  <div class="col-md-4"><label>Cancer Stage:</label></div>
-                  <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="Stage 1">Stage 1</option>
-                      <option value="Stage 2">Stage 2</option>
-                      <option value="Stage 3">Stage 3</option>
-                      <option value="Stage 4">Stage 4</option>
-                    </select>
-                  </div><br><br>
-                  <div class="col-md-4"><label>Sex:</label></div>
-                  <div class="col-md-8">
-                    <select name="Sex" class="form-control">
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
-                  </div><br><br>
-                   <div class="col-md-4"><label>Location :</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="Location"></div><br><br>
-                   <div class="col-md-4"><label>Income:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
-                  <br><br><br>
-                  <div class="col-md-4">
-                    <input type="submit" name="entry_submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
-                  </div>
-                  <div class="col-md-8"></div>                  
+        <input type="submit" class="btn btn-info" id="inputbtn" name="d_submit" value="Show All Doctor details" align
+      ="center">                
+                </div>
+              </form><br><br>
+              
+               <form class="form-group" method="post" action="showP.php">
+                <div class="row">
+        <input type="submit" class="btn btn-info" id="inputbtn" name="p_submit" value="Show All Patient details" >      
+                </div>                  
                 </div>
               </form>
-            </div>
-          </div>
-        </div><br>
-      </div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-        <div class="card">
-          <div class="card-body">
-            <form class="form-group" method="post" action="func.php">
-                <div class="col-md-4"><label>Various Programs:</label></div>
-                  <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="Finance_Towards_Treatment">Finance Towards Treatment</option>
-                      <option value="Nutritional_Support">Nutritional Support</option>
-                      <option value="Childcare_Support">Child Care Support</option>
-                      <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
-                    </select>
-                  </div><br><br>
-                  <input type="submit" name="doc_sub" value="Update Program" class="btn btn-primary">
-            </form>
+               
+               
           </div>
         </div><br><br>
       </div>
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        <div class="col-md-4"><label>Various Programs:</label></div>
+        <form class="form-group" method="post" action="func.php">
+                       <div class="col-md-4"><label>Inventory Management:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="tata Memorial Service">Tata Memorial Service</option>
-                      <option value="Hinduja Hospital">Hinduja Hospital</option>
-                      <option value="Fortis Hospital">Fortis Hospital</option>
-                    
+                  <div class="col-md-4"><label>item 1:</label></div>
+                  <div class="col-md-8">
+                   <select name="Kit1" class="form-control" >
+                      <option value="Finance_Towards_Treatment">10 items in Tata Memorial Service</option>
+                      <option value="Nutritional_Support">8 items in Hinduja Hospital</option>
+                      <option value="Childcare_Support">7 items in Fortis</option>
+                      
                     </select>
                   </div><br><br>
-          <input type="submit" name="doc_sub" value="Update Hospital" class="btn btn-primary">
+                   <div class="col-md-4"><label>item 2:</label></div>
+                  <div class="col-md-8">
+                   <select name="Kit2" class="form-control" >
+                      <option value="Finance_Towards_Treatment">20 items in Tata Memorial Service</option>
+                      <option value="Nutritional_Support">18 items in Hinduja Hospital</option>
+                      <option value="Childcare_Support">17 items in Fortis</option>
+                      
+                    </select>
+                  </div><br><br>
+                  <input type="submit" name="doc_sub" value="Update Inventory" class="btn btn-primary">
         </form>
       </div>
        <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
+       <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <center><h4>Fill in Details</h4></center><br>
+              <form class="form-group" method="post" action="appointment.php">
+               
+               <div class="row">
+                 <input type="submit" class="btn btn-info" id="inputbtn" name="v_submit" value="Show All Volunteer details" align
+      ="center">       
+                </div>
+              </form><br><br>
+              
+               <form class="form-group" method="post" action="showD.php">
+                <div class="row">
+        <input type="submit" class="btn btn-info" id="inputbtn" name="d_submit" value="Show All Doctor details" align
+      ="center">                
+                </div>
+              </form><br><br>
        
        
        </div>
