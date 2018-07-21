@@ -108,7 +108,17 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text"  class="form-control" name="age"></div><br><br>
                   <div class="col-md-4"><label>Contact Number:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
-                  <div class="col-md-4"><label>Cancer type:</label></div>
+                  
+                   <div class="col-md-4"><label>Cancer:</label></div>
+                  <div class="col-md-8">
+                   <select name="doctor" class="form-control" >
+                      <option value="Bladder Cancer">Bladder Cancer</option>
+                      <option value="Kidney">Kidney Cancer</option>
+                      <option value="Breast Cancer">Breast Cancer</option>
+                    </select>
+                  </div><br><br>
+                  
+                  <div class="col-md-4"><label>Cancer Stage:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
                       <option value="Stage 1">Stage 1</option>
@@ -143,26 +153,38 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
-              <input type="text" name="contact" class="form-control" placeholder="enter contact"><br>
-              <select name="status" class="form-control">
-                <option value="paid">paid</option>
-                <option value="pay later">pay later</option>
-              </select><br><hr>
-              <input type="submit" value="update" name="update_data" class="btn btn-primary">
+                <div class="col-md-4"><label>Various Programs:</label></div>
+                  <div class="col-md-8">
+                   <select name="doctor" class="form-control" >
+                      <option value="Finance_Towards_Treatment">Finance Towards Treatment</option>
+                      <option value="Nutritional_Support">Nutritional Support</option>
+                      <option value="Childcare_Support">Child Care Support</option>
+                      <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
+                    </select>
+                  </div><br><br>
+                  <input type="submit" name="doc_sub" value="Update Program" class="btn btn-primary">
             </form>
           </div>
         </div><br><br>
       </div>
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        <form class="form-group" method="post" action="func.php">
-          <label>Doctors name: </label>
-          <input type="text" name="name" placeholder="enter doctors name" class="form-control">
-          <br>
-          <input type="submit" name="doc_sub" value="Add Doctor" class="btn btn-primary">
+        <div class="col-md-4"><label>Various Programs:</label></div>
+                  <div class="col-md-8">
+                   <select name="doctor" class="form-control" >
+                      <option value="tata Memorial Service">Tata Memorial Service</option>
+                      <option value="Hinduja Hospital">Hinduja Hospital</option>
+                      <option value="Fortis Hospital">Fortis Hospital</option>
+                    
+                    </select>
+                  </div><br><br>
+          <input type="submit" name="doc_sub" value="Update Hospital" class="btn btn-primary">
         </form>
       </div>
-       <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">...</div>
+       <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
+       
+       
+       </div>
     </div>
   </div>
 </div>
