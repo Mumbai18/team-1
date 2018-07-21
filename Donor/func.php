@@ -36,7 +36,8 @@ function display_docs()
 }
 if(isset($_POST['doc_sub']))
 {
-	$name=$_POST['name'];
+	$contact=$_POST['contact'];
+
 	$query="insert into doctb(name)values('$name')";
 	$result=mysqli_query($con,$query);
 	if($result)
@@ -82,8 +83,7 @@ function display_admin_panel(){
     <div class="row">
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal Details</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Bank Details and Identification</a>
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal and Bank Details Identification</a>
       <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Donation Used</a>
 
     </div><br>
@@ -101,14 +101,15 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Resident:</label></div>
+                  <div class="col-md-4"><label>Contact:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
+                  <div class="col-md-4"><label>Nationality:</label></div>
                       <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
+                   <select name="nationality" class="form-control" >
                       <option value="Indian">Indian</option>
                       <option value="NRI">NRI</option> 
                     </select>
                   </div><br><br>
-                  
                   
                    <div class="col-md-4"><label>Purpose:</label></div>
                   <div class="col-md-8">
@@ -120,7 +121,21 @@ function display_admin_panel(){
                       <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
                       </select>
                   </div><br><br>
-
+                  <div class="col-md-4"><label> Enter Amount To Donate : </label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="donation_amt"></div><br><br>
+                  
+                  <div class="col-md-4"><label>Enter Account Number :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="acc_no"></div><br><br>
+                  
+                  
+                  <div class="col-md-4"><label>Select Date :</label></div>
+                  <div class="col-md-8"><input type="date" class="form-control" name="date"></div><br><br>
+                   
+                  
+                      <div class="col-md-4"><label>Enter Pancard Number :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pan_no"></div><br><br> 
+                 
+                 
 
                   <br><br><br>
                   <div class="col-md-4">
@@ -137,7 +152,9 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
-                 <div class="col-md-4"><label>Enter Amount To Donate :</label></div>
+                <div class="col-md-4"><label> Enter Contact Number : </label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="contact"></div><br>
+                 <div class="col-md-4"><label> Enter Amount To Donate : </label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="Amount"></div><br>
                   
                   <div class="col-md-4"><label>Enter Account Number :</label></div>
