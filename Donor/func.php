@@ -4,7 +4,7 @@ $con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['login_submit'])){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$query="select * from logintb where username='$username' and password='$password';";
+	$query="select * from donor where uname='$username' and pwd='$password';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
@@ -100,9 +100,9 @@ function display_admin_panel(){
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
                  <div class="col-md-4"><label>User Name:</label></div>
-                  
-                  <div class="col-md-4"><label>First Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control" name="uname"></div><br><br>  
+                  <div class="col-md-4"><label>Password:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pwd"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
                   <div class="col-md-4"><label>Contact:</label></div>
