@@ -12,17 +12,17 @@
     #inputbtn:hover{cursor:pointer;}
   </style>
   <body style="background:url('images/backgroundimg.jpeg'); background-size: cover;">
+    <div ></div>
     <div class="container-fluid" style="margin-top:60px;margin-bottom:60px;color:#34495E;">
       <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-4">
+        <div class="col-md-11">
           <div class="card">
-            <img src="images/cardback.jpeg" class="card-img-top">
-            <div class="card-body">
-              <center>
-              <h5>Login Page</h5><br>
+            <img src="images/vcare_logo.jpg" class="card-img-top" height="250px">
+            
+              <h5>Donor Signup Page</h5><br>
               <form class="form-group" method="post" action="func.php">
-                <div class="row">
+                <div class="row" >
                   <div class="col-md-4"><label>First Name: </label></div>
                   <div class="col-md-8"><input type="text" name="fname" class="form-control" placeholder="Enter First Name" required/></div><br><br>
                   <div class="col-md-4"><label>Last Name: </label></div>
@@ -30,7 +30,8 @@
                   <div class="col-md-4"><label>Age: </label></div>
                   <div class="col-md-8"><input type="number" name="age" class="form-control" placeholder="Enter your Age" required/></div><br><br>
                   <div class="col-md-4"><label>Email: </label></div>
-                  <div class="col-md-8"><input type="text" name="lname" class="form-control" placeholder="Enter Email" required/></div><br><br>
+                  <div class="col-md-8"><input type="email" name="email" class="form-control" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
+                </div><br><br>
                   <div class="col-md-4"><label>Contact: </label></div>
                   <div class="col-md-8"><input type="text" name="lname" class="form-control" placeholder="Enter Last Name" required/></div><br><br>
                   <div class="col-md-4"><label>Username: </label></div>
@@ -38,13 +39,12 @@
                   <div class="col-md-4"><label>Password: </label></div>
                   <div class="col-md-8"><input type="password" class="form-control" name="password" placeholder="Enter Password" required/></div><br><br><br>
 
-                  <select name="type">
-                    <option value="Patient"></option>
-                    <option value="Donor"></option>
-                    <option value="Volunteer"></option>
+                  <div class="col-md-4"><label>Type of Donation: </label></div>
+                  <select name="d-type">
+                    <option value="General">General</option>
+                    <option value="Customised">Customised</option>
                   </select>
-
-                  <center><input type="submit" id="inputbtn" name="login_submit" value="Register" class="btn btn-primary">
+                  <center> <input type="submit" id="inputbtn" name="login_submit" value="Register" class="btn btn-primary">
                   </center>
                 </div>
 
