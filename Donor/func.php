@@ -85,6 +85,8 @@ function display_admin_panel(){
     <div class="list-group" id="list-tab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal and Bank Details Identification</a>
       <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Donation Used</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Feedback</a>
+
 
     </div><br>
   </div>
@@ -97,6 +99,8 @@ function display_admin_panel(){
               <center><h4>Fill in Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
+                 <div class="col-md-4"><label>User Name:</label></div>
+                  
                   <div class="col-md-4"><label>First Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
