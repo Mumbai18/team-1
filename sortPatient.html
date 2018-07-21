@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Donor</title>
+    <title>Patient</title>
     <meta name="description" content="List.js is super flexible and here are two examples of how to use it.">
     <meta name="author" content="Jonny Strömberg">
 	<meta name="google-site-verification" content="CxtqsFWhMxG32DK5A7Hbtg1ficvqhu9sybSeDP25JpI" />
@@ -35,7 +35,7 @@
 <body style="background-color: rgba(30,30,30,.8);">
 
 	<div class="menu" style="background-color:black;">
-        <h1 style="margin-top: 20px;">Donor Database</h1>
+        <h1 style="margin-top: 20px;">Patient Database</h1>
 	</div>
 
     <div id="container" class="example-page" style="background-color: rgba(30,30,30,.8);">
@@ -43,12 +43,12 @@
             <div id="main">
 
                 <div class="c1">
-                    <h2>Donor List</h2>
+                    <h2>Patient List</h2>
                     <div id="lovely-things-list">
-                        <input class="search" placeholder="Search for donors" />
+                        <input class="search" placeholder="Search for Patient" />
                         <ul class="sort-by">
                             <li class="sort btn" data-sort="name">Sort by name</li>
-                            <li class="sort btn" data-sort="program-type">Sort by program</li>
+                            <li class="sort btn" data-sort="category">Sort by program</li>
                             <li class="sort btn" data-sort="cancer-type">Sort by type of cancer</li>
                             <li class="sort btn" data-sort="location">Sort by location</li>
                             <li class="sort btn" data-sort="gender">Sort by gender</li>
@@ -60,32 +60,28 @@
                         </ul>
                         <ul class="list">
                             <li>
-                                <h4><span class="name">Tanya Sharma</span> <span class="program-type program-finance" style="float: right;">Finance</span></h4></h4>
-                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">50000</p></p>
-                                <p class="description">Bank Details: Barclays</p>
-                                <p class="description">AC: 1099635738</p>
-                                <p style="display: inline;">Date: <p class="date" style="display: inline;">10/09/2015</p></p>
+                                <h4><span class="name">Tanya Sharma</span> <span class="category" style="float: right;">Finance</span></h4></h4>
+                                <p style="display: inline;">Cancer type: <p style="display: inline;" class="cancer-type">Lung Cancer</p></p>
+                                <p class="gender">Female</p>
+                                <p class="location">Mumbai</p>
                             </li>
                             <li>
-                                <h4><span class="name">Shweta Gupta</span> <span class="category" style="float: right;">Resident</span></h4></h4>
-                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">170000</p></p>
-                                <p class="description">Bank Details: Barclays</p>
-                                <p class="description">AC: 1099635738</p>
-                                <p style="display: inline;">Date: <p class="date" style="display: inline;">27/09/2013</p></p>
+                                <h4><span class="name">Shweta Gupta</span> <span class="category" style="float: right;">Finance</span></h4></h4>
+                                <p style="display: inline;">Cancer type: <p style="display: inline;" class="cancer-type">Breast Cancer</p></p>
+                                <p class="gender">Female</p>
+                                <p class="location">Rajasthan</p>
                             </li>
                             <li>
-                                <h4><span class="name">Ned Hoffman</span> <span class="category" style="float: right;">Resident</span></h4></h4>
-                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">2100000</p></p>
-                                <p class="description">Bank Details: Barclays</p>
-                                <p class="description">AC: 1099635738</p>
-                                <p style="display: inline;">Date: <p class="date" style="display: inline;">08/09/2016</p></p>
+                                <h4><span class="name">Ned Hoffman</span> <span class="category" style="float: right;">Finance</span></h4></h4>
+                                <p style="display: inline;">Cancer type: <p style="display: inline;" class="cancer-type">Lung Cancer</p></p>
+                                <p class="gender">Male</p>
+                                <p class="location">Mumbai</p>
                             </li>
                             <li>
-                                <h4><span class="name">Vipul Mishra</span> <span class="category" style="float: right;">NRI</span></h4>
-                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">20000</p></p>
-                                <p class="description">Bank Details: Barclays</p>
-                                <p class="description">AC: 1099635738</p>
-                                <p style="display: inline;">Date: <p class="date" style="display: inline;">09/12/2017</p></p>
+                                <h4><span class="name">Vipul Mishra</span> <span class="category" style="float: right;">Childcare</span></h4>
+                                <p style="display: inline;">Cancer type: <p style="display: inline;" class="cancer-type">Prostate Cancer</p></p>
+                                <p class="gender">Male</p>
+                                <p class="location">Mumbai</p>
                             </li>
                         </ul>
                     </div>
@@ -105,14 +101,14 @@
         */
 
         var options = {
-    	    valueNames: [ 'name', 'description', 'program-type', 'cancer-type', 'gender', 'location' ]
+    	    valueNames: [ 'name', 'description', 'program-type', 'cancer-type', 'gender', 'location', 'category' ]
         };
 
         var featureList = new List('lovely-things-list', options);
 
         $('#filter-program-finance').click(function() {
             featureList.filter(function(item) {
-                if (item.values().category == "Finance") {
+                if (item.values().category.includes("Finance")) {
                     return true;
                 } else {
                     return false;
@@ -123,18 +119,7 @@
 
         $('#filter-program-childcare').click(function() {
             featureList.filter(function(item) {
-                if (item.values().category == "program-childcare") {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-            return false;
-        });
-
-        $('#filter-gender').click(function() {
-            featureList.filter(function(item) {
-                if (item.values().category == "gender") {
+                if (item.values().category.includes("Childcare")) {
                     return true;
                 } else {
                     return false;
