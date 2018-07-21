@@ -58,28 +58,28 @@
                         </ul>
                         <ul class="list">
                             <li>
-                                <a href=""><h4><span class="name">Mr. Rohan Kumar</span></a> <span class="category" style="float: right;">NRI</span></h4></h4>
+                                <a href="" id="d1"><h4><span class="name">Mr. Rohan Kumar</span></a> <span class="category" style="float: right;">NRI</span></h4></h4>
                                 <p style="display: inline;">Amount: <p style="display: inline;" class="amount">50000</p></p>
                                 <p class="description">Bank Details: Barclays</p>
                                 <p class="description">AC: 1099635738</p>
                                 <p style="display: inline;">Date: <p class="date" style="display: inline;">10/09/2015</p></p>
                             </li>
                             <li>
-                                <a href=""><h4><span class="name">Mrs. Shweta Gupta</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <a href="" id="d2"><h4><span class="name">Mrs. Shweta Gupta</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
                                 <p style="display: inline;">Amount: <p style="display: inline;" class="amount">170000</p></p>
                                 <p class="description">Bank Details: Barclays</p>
                                 <p class="description">AC: 1099635738</p>
                                 <p style="display: inline;">Date: <p class="date" style="display: inline;">27/09/2013</p></p>
                             </li>
                             <li>
-                                <a href=""><h4><span class="name">Mr. Gregory House</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <a href="" id="d3"><h4><span class="name">Mr. Gregory House</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
                                 <p style="display: inline;">Amount: <p style="display: inline;" class="amount">2100000</p></p>
                                 <p class="description">Bank Details: Barclays</p>
                                 <p class="description">AC: 1099635738</p>
                                 <p style="display: inline;">Date: <p class="date" style="display: inline;">08/09/2016</p></p>
                             </li>
                             <li>
-                                <a href=""><h4><span class="name">Mr. Narayan Das</span></a> <span class="category" style="float: right;">NRI</span></h4>
+                                <a href="" id="d4"><h4><span class="name">Mr. Narayan Das</span></a> <span class="category" style="float: right;">NRI</span></h4>
                                 <p style="display: inline;">Amount: <p style="display: inline;" class="amount">20000</p></p>
                                 <p class="description">Bank Details: Barclays</p>
                                 <p class="description">AC: 1099635738</p>
@@ -89,8 +89,37 @@
                     </div>
                 </div>
         </div>
-
     </div> <!-- end of #container -->
+
+
+    <script type="text/javascript">
+        var b = document.getElementById('d1');
+        var name = document.getElementById('d1').nextSibling.childNodes[0].firstChild.textContent;
+        var cat = document.getElementById('d1').nextSibling.childNodes[2].textContent;
+        var amount = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.textContent;
+        var bankName = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.nextElementSibling.nextSibling.nextSibling.textContent;
+        var bankDetails = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.nextElementSibling.nextSibling.nextSibling.nextSibling.nextSibling.textContent;
+
+        var data = {
+            "name": name,
+            "cat": cat,
+            "amount": amount,
+            "bankName": bankName,
+            "bankDetails": bankDetails,
+        }
+        url = 'donorReport.html?name=' + encodeURIComponent(name)
+        + '&cat=' + encodeURIComponent(cat)
+        + '&amount=' + encodeURIComponent(amount)
+        + '&bankName=' + encodeURIComponent(bankName)
+        + '&bankDetails=' + encodeURIComponent(bankDetails);
+        console.log(name);
+        console.log(cat);
+        console.log(amount);
+        console.log(bankName);
+        console.log(bankDetails);
+        
+        // document.location.href = url;
+    </script>
 
 
     <!-- Start of List.js stuff -->
@@ -136,5 +165,6 @@
         });
     </script>
     <!-- End of List.js stuff -->
+
 </body>
 </html>
