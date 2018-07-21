@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+
+<?php
+include("func.php");
+if(isset($_POST['feedback_submit'])){
+  $type="volunteer";
+  $feedback=$_POST['feedback'];
+
+  $query="insert into feedback(type,feedback) values ('$type','$feedback');";
+  $result=mysqli_query($con,$query);
+  if($result)
+    header("Location:appointment.php");
+}
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -21,6 +35,8 @@
 <?php
 include("func.php");
 if(isset($_POST['entry_submit'])){
+  $uname=$_POST['uname'];
+  $pwd=$_POST['pwd'];
   $fname=$_POST['fname'];
   $lname=$_POST['lname'];
   $age=$_POST['age'];
@@ -32,9 +48,10 @@ if(isset($_POST['entry_submit'])){
   $income=$_POST['income'];
   $verify=$_POST['verify'];
 
-  $query="insert into appointmenttb(fname,lname,age,contact,cancer,cancer_stage,sex,location,income,verify) values ('$fname','$lname','$age','$contact','$cancer','$cancer_stage','$sex','location',$income,'verify');";
+  $query="insert into volunteer(uname,pwd,fname,lname,age,contact,cancer,cancer_stage,sex,location,income,verify) values ('$uname','$pwd','$fname','$lname','$age','$contact','$cancer','$cancer_stage','$sex','location',$income,'verify');";
   $result=mysqli_query($con,$query);
   if($result)
     header("Location:appointment.php");
 }
 ?>
+

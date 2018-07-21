@@ -4,7 +4,7 @@ $con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['login_submit'])){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$query="select * from logintb where username='$username' and password='$password';";
+	$query="select * from volunteer where username='$username' and password='$password';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
@@ -89,6 +89,7 @@ function display_admin_panel(){
       <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Info</a>
       <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Update Schedule</a>
         <a class="list-group-item list-group-item-action" id="list-attend-list" data-toggle="list" href="#list-attend" role="tab" aria-controls="settings">Patients to Attend</a>
+        <a class="list-group-item list-group-item-action" id="list-feedback-list" data-toggle="list" href="#feedback" role="tab" aria-controls="settings">Feedback</a>
 
     </div><br>
   </div>
@@ -101,6 +102,10 @@ function display_admin_panel(){
               <center><h4>Fill in Patient Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
+                <div class="col-md-4"><label>Username:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="uname"></div><br><br>
+                  <div class="col-md-4"><label> Password:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pwd"></div><br><br>
                   <div class="col-md-4"><label>First Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
@@ -205,7 +210,21 @@ function display_admin_panel(){
             </form>
       </div>
        
-       
+
+       <div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="list-attend-list">
+      <form class="form-group" method="post" action="func1.php">
+                <div class="col-md-4"><label>Feedback:</label></div>
+                  <div class="col-md-8">
+                   <textarea rows="4" cols="50" name="feedback" placeholder="Please give your Feedback here" autofocus> </textarea>
+                   <input type="submit" name="feedback_submit" value="Submit" >
+                  </div><br><br>
+                  
+            </form>
+      </div>
+
+  
+
+
        </div>
     </div>
   </div>
