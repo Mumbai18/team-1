@@ -18,7 +18,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-11">
           <div class="card">
-            <img src="images/vcare_logo.jpg" class="card-img-top" height="250px " width="300px">
+            <img src="images/vcare_logo.jpg" class="card-img-top" height="250px" width="300px">
             
               <h5>Donor Signup Page</h5><br>
        
