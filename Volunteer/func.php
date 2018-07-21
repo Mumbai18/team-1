@@ -140,11 +140,11 @@ function display_admin_panel(){
                    <div class="col-md-4"><label>Income:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
                   
-                    <div class="col-md-4"><label>Sex:</label></div>
+                    <div class="col-md-4"><label>Verification:</label></div>
                   <div class="col-md-8">
                     <select name="Verify" class="form-control">
-                      <option value="verified">Verify</option>
-                      <option value="not verified">Not Verify</option>
+                      <option value="verified">Verified</option>
+                      <option value="not verified">Not Verified</option>
                     </select>
                   </div><br><br>
                   <br><br><br>
