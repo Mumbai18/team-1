@@ -68,10 +68,7 @@ function display_admin_panel(){
         <a class="nav-link" href="#"></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="enter contact number" aria-label="Search" name="contact">
-      <input type="submit" class="btn btn-outline-light my-2 my-sm-0 btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
-    </form>
+   
   </div>
 </nav>
   </head>
@@ -85,9 +82,9 @@ function display_admin_panel(){
     <div class="row">
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Details</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Information</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">List of Hospitals</a>
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal Details</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Bank Details and Identification</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Donation Used</a>
 
     </div><br>
   </div>
@@ -104,40 +101,27 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Age:</label></div>
-                  <div class="col-md-8"><input type="text"  class="form-control" name="age"></div><br><br>
-                  <div class="col-md-4"><label>Contact Number:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
-                  
-                   <div class="col-md-4"><label>Cancer:</label></div>
-                  <div class="col-md-8">
+                  <div class="col-md-4"><label>Resident:</label></div>
+                      <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                      <option value="Bladder Cancer">Bladder Cancer</option>
-                      <option value="Kidney">Kidney Cancer</option>
-                      <option value="Breast Cancer">Breast Cancer</option>
+                      <option value="Indian">Indian</option>
+                      <option value="NRI">NRI</option> 
                     </select>
                   </div><br><br>
                   
-                  <div class="col-md-4"><label>Cancer Stage:</label></div>
+                  
+                   <div class="col-md-4"><label>Purpose:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="Stage 1">Stage 1</option>
-                      <option value="Stage 2">Stage 2</option>
-                      <option value="Stage 3">Stage 3</option>
-                      <option value="Stage 4">Stage 4</option>
-                    </select>
+                  <select name="purpose" class="form-control" >
+                      <option value="General">General</option>
+                      <option value="Finance_Towards_Treatment">Finance Towards Treatment</option>
+                      <option value="Nutritional_Support">Nutritional Support</option>
+                      <option value="Childcare_Support">Child Care Support</option>
+                      <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
+                      </select>
                   </div><br><br>
-                  <div class="col-md-4"><label>Sex:</label></div>
-                  <div class="col-md-8">
-                    <select name="Sex" class="form-control">
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
-                  </div><br><br>
-                   <div class="col-md-4"><label>Location :</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="Location"></div><br><br>
-                   <div class="col-md-4"><label>Income:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
+
+
                   <br><br><br>
                   <div class="col-md-4">
                     <input type="submit" name="entry_submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
@@ -153,16 +137,21 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
-                <div class="col-md-4"><label>Various Programs:</label></div>
-                  <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
-                      <option value="Finance_Towards_Treatment">Finance Towards Treatment</option>
-                      <option value="Nutritional_Support">Nutritional Support</option>
-                      <option value="Childcare_Support">Child Care Support</option>
-                      <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
-                    </select>
-                  </div><br><br>
-                  <input type="submit" name="doc_sub" value="Update Program" class="btn btn-primary">
+                 <div class="col-md-4"><label>Enter Amount To Donate :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="Amount"></div><br>
+                  
+                  <div class="col-md-4"><label>Enter Account Number :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="AcN"></div><br>
+                  
+                  
+                  <div class="col-md-4"><label>Select Date :</label></div>
+                  <div class="col-md-8"><input type="date" class="form-control" name="date"></div><br>
+                   
+                  
+                      <div class="col-md-4"><label>Enter Pancard Number :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="pancard"></div><br><br> 
+                 
+                  <input type="submit" name="doc_sub" value="Update Details" class="btn btn-primary"> 
             </form>
           </div>
         </div><br><br>
@@ -172,13 +161,13 @@ function display_admin_panel(){
         <div class="col-md-4"><label>Various Programs:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                      <option value="tata Memorial Service">Tata Memorial Service</option>
-                      <option value="Hinduja Hospital">Hinduja Hospital</option>
-                      <option value="Fortis Hospital">Fortis Hospital</option>
+                      <option value="tata Memorial Service">25k  for Child Care Support</option>
+                      <option value="Hinduja Hospital">30k  for Nutritional Support</option>
+                      
                     
                     </select>
                   </div><br><br>
-          <input type="submit" name="doc_sub" value="Update Hospital" class="btn btn-primary">
+      
         </form>
       </div>
        <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
