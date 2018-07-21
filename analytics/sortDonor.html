@@ -1,0 +1,170 @@
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Donor</title>
+    <meta name="description" content="List.js is super flexible and here are two examples of how to use it.">
+    <meta name="author" content="Jonny Strömberg">
+	<meta name="google-site-verification" content="CxtqsFWhMxG32DK5A7Hbtg1ficvqhu9sybSeDP25JpI" />
+
+    <!--
+
+    Nothing to see here that has to do with List.js, look at the bottom of the page!
+
+    -->
+
+    <link rel="stylesheet" href="css/sortStyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26278829-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</head>
+
+<body style="background-color: rgba(30,30,30,.8);">
+
+	<div class="menu" style="background-color:black;">
+        <h1 style="margin-top: 20px;">Donor Database</h1>
+	</div>
+
+    <div id="container" class="example-page" style="background-color: rgba(30,30,30,.8);">
+
+            <div id="main">
+
+                <div class="c1">
+                    <h2>Donor List</h2>
+                    <div id="lovely-things-list">
+                        <input class="search" placeholder="Search for donors" />
+                        <ul class="sort-by">
+                            <li class="sort btn" data-sort="name">Sort by name</li>
+                            <li class="sort btn" data-sort="category">Sort by category</li>
+                            <li class="sort btn" data-sort="amount">Sort by amount</li>
+                        </ul>
+                        <ul class="filter">
+                            <li class="btn" id="filter-none">Show all</li>
+                            <li class="btn" id="filter-nris">Only show NRIs</li>
+                            <li class="btn" id="filter-residents">Only show Residents</li>
+                        </ul>
+                        <ul class="list">
+                            <li>
+                                <a href="" id="d1"><h4><span class="name">Mr. Rohan Kumar</span></a> <span class="category" style="float: right;">NRI</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">50000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">10/09/2015</p></p>
+                            </li>
+                            <li>
+                                <a href="" id="d2"><h4><span class="name">Mrs. Shweta Gupta</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">170000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">27/09/2013</p></p>
+                            </li>
+                            <li>
+                                <a href="" id="d3"><h4><span class="name">Mr. Gregory House</span></a> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">2100000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">08/09/2016</p></p>
+                            </li>
+                            <li>
+                                <a href="" id="d4"><h4><span class="name">Mr. Narayan Das</span></a> <span class="category" style="float: right;">NRI</span></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">20000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">09/12/2017</p></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div> <!-- end of #container -->
+
+
+    <script type="text/javascript">
+        var b = document.getElementById('d1');
+        var name = document.getElementById('d1').nextSibling.childNodes[0].firstChild.textContent;
+        var cat = document.getElementById('d1').nextSibling.childNodes[2].textContent;
+        var amount = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.textContent;
+        var bankName = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.nextElementSibling.nextSibling.nextSibling.textContent;
+        var bankDetails = document.getElementById('d1').nextSibling.nextSibling.nextSibling.nextSibling.nextElementSibling.nextSibling.nextSibling.nextSibling.nextSibling.textContent;
+
+        var data = {
+            "name": name,
+            "cat": cat,
+            "amount": amount,
+            "bankName": bankName,
+            "bankDetails": bankDetails,
+        }
+        url = 'donorReport.html?name=' + encodeURIComponent(name)
+        + '&cat=' + encodeURIComponent(cat)
+        + '&amount=' + encodeURIComponent(amount)
+        + '&bankName=' + encodeURIComponent(bankName)
+        + '&bankDetails=' + encodeURIComponent(bankDetails);
+        console.log(name);
+        console.log(cat);
+        console.log(amount);
+        console.log(bankName);
+        console.log(bankDetails);
+        
+        // document.location.href = url;
+    </script>
+
+
+    <!-- Start of List.js stuff -->
+    <script src="js/list.js"></script>
+
+    <script type="text/javascript">
+
+        /*
+        * LOVELY THINGS
+        */
+
+        var options = {
+    	    valueNames: [ 'name', 'description', 'category', 'amount', 'date' ]
+        };
+
+        var featureList = new List('lovely-things-list', options);
+
+        $('#filter-nris').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "NRI") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+
+        $('#filter-residents').click(function() {
+            featureList.filter(function(item) {
+                if (item.values().category == "Resident") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            return false;
+        });
+
+        $('#filter-none').click(function() {
+            featureList.filter();
+            return false;
+        });
+    </script>
+    <!-- End of List.js stuff -->
+
+</body>
+</html>
