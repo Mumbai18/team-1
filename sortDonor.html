@@ -1,15 +1,9 @@
-<!doctype html>
-
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>List.js - Examples of how to use the script</title>
+    <title>Donor</title>
     <meta name="description" content="List.js is super flexible and here are two examples of how to use it.">
     <meta name="author" content="Jonny Strömberg">
 	<meta name="google-site-verification" content="CxtqsFWhMxG32DK5A7Hbtg1ficvqhu9sybSeDP25JpI" />
@@ -19,9 +13,8 @@
     Nothing to see here that has to do with List.js, look at the bottom of the page!
 
     -->
-    <link rel="shortcut icon" href="../images/graphics/favicon.ico">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/sortStyle.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script type="text/javascript">
@@ -39,41 +32,20 @@
     </script>
 </head>
 
-<body>
+<body style="background-color: rgba(30,30,30,.8);">
 
-	<div class="menu">
-	    <div class="menu-container">
-	        <ul class="main">
-    			<li class="name"><a href="../">List.js</a></li>
-        		<li><a href="standard.html">Examples</a></li>
-        		<li><a href="https://github.com/javve/list/blob/master/README.md">Documentation</a></li>
-        		<li><a href="https://github.com/javve/list">Source</a></li>
-        		<li><a href="http://jonnystromberg.com/blog/categories/listjs/">Blog</a></li>
-        		<li><a href="https://raw.github.com/javve/list/master/list.min.js"><b>Download</b></a></li>
-        	</ul>
-    		<ul class="secondary">
-    			<li><a href="standard.html">Basic example</a></li>
-    			<li><a href="add-edit-remove.html">Add, edit & remove</a></li>
-    			<li><a href="paging.html">Paging</a></li>
-                <li><a href="fuzzy-search.html">Fuzzy Search</a></li>
-    			<li><a href="performance-test.html">Performance</a></li>
-    		</ul>
-    	</div>
+	<div class="menu" style="background-color:black;">
+        <h1 style="margin-top: 10px;">Donor Database</h1>
 	</div>
 
-    <div id="container" class="example-page">
-        <div>
-            <h1>List.js - Basic example</h1>
-        </div>
+    <div id="container" class="example-page" style="background-color: rgba(30,30,30,.8);">
 
             <div id="main">
 
-                <p class="note"><b>Note</b>: These examples are build using jQuery, but that is not required.</p>
-
                 <div class="c1">
-                    <h2>Lovely things list</h2>
+                    <h2>Donor List</h2>
                     <div id="lovely-things-list">
-                        <input class="search" placeholder="Search lovely things" />
+                        <input class="search" placeholder="Search for donors" />
                         <ul class="sort-by">
                             <li class="sort btn" data-sort="name">Sort by name</li>
                             <li class="sort btn" data-sort="category">Sort by category</li>
@@ -113,7 +85,7 @@
 
 
     <!-- Start of List.js stuff -->
-    <script src="../../src/list.js"></script>
+    <script src="js/list.js"></script>
 
     <script type="text/javascript">
 
