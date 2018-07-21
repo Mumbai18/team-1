@@ -182,12 +182,12 @@ function display_admin_panel(){
         <div class="col-md-4"><label>Update Schedule:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                      <option value="tata Memorial Service">Availiable</option>
-                      <option value="Hinduja Hospital">Not availiable</option>
+                      <option value="tata Memorial Service">Available</option>
+                      <option value="Hinduja Hospital">Not Available</option>
                     
                     </select>
                   </div><br><br>
-          <input type="submit" name="doc_sub" value="Update Availiability" class="btn btn-primary">
+          <input type="submit" name="doc_sub" value="Update Availability" class="btn btn-primary">
         </form>
       </div>
       <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
