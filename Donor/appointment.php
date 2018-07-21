@@ -21,6 +21,8 @@
 <?php
 include("func.php");
 if(isset($_POST['entry_submit'])){
+  $uname=$_POST['uname'];
+  $pwd=$_POST['pwd'];
   $fname=$_POST['fname'];
   $lname=$_POST['lname'];
   $contact=$_POST['contact'];
@@ -30,7 +32,7 @@ if(isset($_POST['entry_submit'])){
   $acc_no=$_POST['acc_no'];
   $date=$_POST['date'];
   $pan_no=$_POST['pan_no'];
-  $query="insert into donor (fname,lname,contact,nationality,purpose,,donation_amt,acc_no,date,pan_no) values ('$fname','$lname','$contact','$nationality','$purpose','$donation_amt','acc_no','date','pan_no');";
+  $query="insert into donor ( uname,pwd,fname,lname,contact,nationality,purpose,,donation_amt,acc_no,date,pan_no) values ('$uname','$pwd','$fname','$lname','$contact','$nationality','$purpose','$donation_amt','acc_no','date','pan_no');";
   $result=mysqli_query($con,$query);
   if($result)
     header("Location:appointment.php");
