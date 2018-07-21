@@ -28,7 +28,9 @@
                   <div class="col-md-4"><label>Password: </label></div>
                   <div class="col-md-8"><input type="password" class="form-control" name="password" placeholder="enter password" required/></div><br><br><br>
                 </div>
-                <center><input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary"></center>
+                <center><input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary">
+                  <input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary">
+                </center>
               </form>
             </center>
             </div>

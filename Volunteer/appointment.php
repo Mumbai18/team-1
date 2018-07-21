@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body style="background-color:#3498DB;color:white;padding-top:100px;text-align:center;">
-    <h3>Your appointment has been booked.</h3><br><br>
+    <h3>Patient details has been added.</h3><br><br>
     <a href="admin-panel.php" class="btn btn-outline-light">Return to admin panel</a>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -23,11 +23,16 @@ include("func.php");
 if(isset($_POST['entry_submit'])){
   $fname=$_POST['fname'];
   $lname=$_POST['lname'];
-  $email=$_POST['email'];
+  $age=$_POST['age'];
   $contact=$_POST['contact'];
-  $doctor=$_POST['doctor'];
-  $payment=$_POST['payment'];
-  $query="insert into appointmenttb(fname,lname,email,contact,doctor,payment) values ('$fname','$lname','$email','$contact','$doctor','$payment');";
+  $cancer=$_POST['cancer'];
+  $cancer_stage=$_POST['cancer_stage'];
+  $sex=$_POST['sex'];
+  $location=$_POST['location'];
+  $income=$_POST['income'];
+  $verify=$_POST['verify'];
+
+  $query="insert into appointmenttb(fname,lname,age,contact,cancer,cancer_stage,sex,location,income,verify) values ('$fname','$lname','$age','$contact','$cancer','$cancer_stage','$sex','location',$income,'verify');";
   $result=mysqli_query($con,$query);
   if($result)
     header("Location:appointment.php");
