@@ -43,6 +43,7 @@ if(isset($_POST['doc_sub']))
 		header("Location:adddoc.php");
 }
 function display_admin_panel(){
+    
 	echo '<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,10 +85,9 @@ function display_admin_panel(){
     <div class="row">
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Appointment</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Payment Status</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Prescription</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Doctors Section</a>
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Details</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Information</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">List of Hospitals</a>
        <a class="list-group-item list-group-item-action" id="list-attend-list" data-toggle="list" href="#list-attend" role="tab" aria-controls="settings">Attendance</a>
     </div><br>
   </div>
@@ -97,32 +97,38 @@ function display_admin_panel(){
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <center><h4>Create an appointment</h4></center><br>
+              <center><h4>Fill in Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
                   <div class="col-md-4"><label>First Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Email id:</label></div>
-                  <div class="col-md-8"><input type="text"  class="form-control" name="email"></div><br><br>
+                  <div class="col-md-4"><label>Age:</label></div>
+                  <div class="col-md-8"><input type="text"  class="form-control" name="age"></div><br><br>
                   <div class="col-md-4"><label>Contact Number:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
-                  <div class="col-md-4"><label>Doctor:</label></div>
+                  <div class="col-md-4"><label>Cancer type:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                     <!-- <option value="Dr. Punam Shaw">Dr. Punam Shaw</option>
-                      <option value="Dr. Ashok Goyal">Dr. Ashok Goyal</option> -->
-                      <?php display_docs();?>
+                      <option value="Stage 1">Stage 1</option>
+                      <option value="Stage 2">Stage 2</option>
+                      <option value="Stage 3">Stage 3</option>
+                      <option value="Stage 4">Stage 4</option>
                     </select>
                   </div><br><br>
-                  <div class="col-md-4"><label>Payment:</label></div>
+                  <div class="col-md-4"><label>Sex:</label></div>
                   <div class="col-md-8">
-                    <select name="payment" class="form-control" >
-                      <option value="Paid">Paid</option>
-                      <option value="Pay later">Pay later</option>
+                    <select name="Sex" class="form-control">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
                     </select>
-                  </div><br><br><br>
+                  </div><br><br>
+                   <div class="col-md-4"><label>Location :</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="Location"></div><br><br>
+                   <div class="col-md-4"><label>Income:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
+                  <br><br><br>
                   <div class="col-md-4">
                     <input type="submit" name="entry_submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
                   </div>
