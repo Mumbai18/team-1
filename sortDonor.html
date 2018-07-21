@@ -35,7 +35,7 @@
 <body style="background-color: rgba(30,30,30,.8);">
 
 	<div class="menu" style="background-color:black;">
-        <h1 style="margin-top: 10px;">Donor Database</h1>
+        <h1 style="margin-top: 20px;">Donor Database</h1>
 	</div>
 
     <div id="container" class="example-page" style="background-color: rgba(30,30,30,.8);">
@@ -49,32 +49,41 @@
                         <ul class="sort-by">
                             <li class="sort btn" data-sort="name">Sort by name</li>
                             <li class="sort btn" data-sort="category">Sort by category</li>
+                            <li class="sort btn" data-sort="amount">Sort by amount</li>
                         </ul>
                         <ul class="filter">
                             <li class="btn" id="filter-none">Show all</li>
-                            <li class="btn" id="filter-games">Only show games</li>
-                            <li class="btn" id="filter-beverages">Only show beverages</li>
+                            <li class="btn" id="filter-nris">Only show NRIs</li>
+                            <li class="btn" id="filter-residents">Only show Residents</li>
                         </ul>
                         <ul class="list">
                             <li>
-                                <img src="images/monkeyisland.jpg" class="thumb" />
-                                <h4><span class="name">Monkey Island 2: LeChuck's Revenge</span> <span class="category">Game</span></h4></h4>
-                                <p class="description">Monkey Island 2: LeChuck's Revenge is an adventure game developed and published by LucasArts in 1991. It was the second game of the Monkey Island series, following The Secret...</p>
+                                <h4><span class="name">Mr. Rohan Kumar</span> <span class="category" style="float: right;">NRI</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">50000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">10/09/2015</p></p>
                             </li>
                             <li>
-                                <img src="images/coffee.jpg" class="thumb" />
-                                <h4><span class="name">Good Coffee</span> <span class="category">Beverage</span></h4></h4>
-                                <p class="description">Coffee is a brewed beverage with a dark, slightly acidic flavor prepared from the roasted seeds of the coffee plant, colloquially called coffee beans.</p>
+                                <h4><span class="name">Mrs. Shweta Gupta</span> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">170000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">27/09/2013</p></p>
                             </li>
                             <li>
-                                <img src="images/fullthrottle.jpg" class="thumb" />
-                                <h4><span class="name">Full Throttle</span> <span class="category">Game</span></h4></h4>
-                                <p class="description">Full Throttle is a computer adventure game developed and published by LucasArts. It was designed by Tim Schafer, who would later go on to design the critically acclaimed titles Grim Fandango, Psychonauts and Brütal Legend.</p>
+                                <h4><span class="name">Mr. Gregory House</span> <span class="category" style="float: right;">Resident</span></h4></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">2100000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">08/09/2016</p></p>
                             </li>
                             <li>
-                                <img src="images/brooklyn.jpg" class="thumb" />
-                                <h4><span class="name">Brooklyn Lager</span> <span class="category">Beverage</span></h4>
-                                <p class="description">Brooklyn Brewery was started in 1987 by former Associated Press correspondent Steve Hindy and former Chemical Bank lending officer Tom Potter.</p>
+                                <h4><span class="name">Mr. Narayan Das</span> <span class="category" style="float: right;">NRI</span></h4>
+                                <p style="display: inline;">Amount: <p style="display: inline;" class="amount">20000</p></p>
+                                <p class="description">Bank Details: Barclays</p>
+                                <p class="description">AC: 1099635738</p>
+                                <p style="display: inline;">Date: <p class="date" style="display: inline;">09/12/2017</p></p>
                             </li>
                         </ul>
                     </div>
@@ -94,14 +103,14 @@
         */
 
         var options = {
-    	    valueNames: [ 'name', 'description', 'category' ]
+    	    valueNames: [ 'name', 'description', 'category', 'amount', 'date' ]
         };
 
         var featureList = new List('lovely-things-list', options);
 
-        $('#filter-games').click(function() {
+        $('#filter-nris').click(function() {
             featureList.filter(function(item) {
-                if (item.values().category == "Game") {
+                if (item.values().category == "NRI") {
                     return true;
                 } else {
                     return false;
@@ -110,9 +119,9 @@
             return false;
         });
 
-        $('#filter-beverages').click(function() {
+        $('#filter-residents').click(function() {
             featureList.filter(function(item) {
-                if (item.values().category == "Beverage") {
+                if (item.values().category == "Resident") {
                     return true;
                 } else {
                     return false;
@@ -120,6 +129,7 @@
             });
             return false;
         });
+
         $('#filter-none').click(function() {
             featureList.filter();
             return false;
