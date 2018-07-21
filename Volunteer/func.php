@@ -69,7 +69,7 @@ function display_admin_panel(){
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="enter contact number" aria-label="Search" name="contact">
+      <input class="form-control mr-sm-2" type="text" placeholder="enter location" aria-label="Search" name="location">
       <input type="submit" class="btn btn-outline-light my-2 my-sm-0 btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
     </form>
   </div>
@@ -85,9 +85,10 @@ function display_admin_panel(){
     <div class="row">
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Details</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Information</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">List of Hospitals</a>
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Patient Details</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Program Info</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Update Schedule</a>
+        <a class="list-group-item list-group-item-action" id="list-attend-list" data-toggle="list" href="#list-attend" role="tab" aria-controls="settings">Patients to Attend</a>
 
     </div><br>
   </div>
@@ -97,7 +98,7 @@ function display_admin_panel(){
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <center><h4>Fill in Details</h4></center><br>
+              <center><h4>Fill in Patient Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
                   <div class="col-md-4"><label>First Name:</label></div>
@@ -138,7 +139,16 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text" class="form-control" name="Location"></div><br><br>
                    <div class="col-md-4"><label>Income:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="income"></div><br><br>
+                  
+                    <div class="col-md-4"><label>Sex:</label></div>
+                  <div class="col-md-8">
+                    <select name="Verify" class="form-control">
+                      <option value="verified">Verify</option>
+                      <option value="not verified">Not Verify</option>
+                    </select>
+                  </div><br><br>
                   <br><br><br>
+                  
                   <div class="col-md-4">
                     <input type="submit" name="entry_submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
                   </div>
@@ -169,19 +179,31 @@ function display_admin_panel(){
       </div>
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        <div class="col-md-4"><label>Various Programs:</label></div>
+        <div class="col-md-4"><label>Update Schedule:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
-                      <option value="tata Memorial Service">Tata Memorial Service</option>
-                      <option value="Hinduja Hospital">Hinduja Hospital</option>
-                      <option value="Fortis Hospital">Fortis Hospital</option>
+                      <option value="tata Memorial Service">Availiable</option>
+                      <option value="Hinduja Hospital">Not availiable</option>
                     
                     </select>
                   </div><br><br>
-          <input type="submit" name="doc_sub" value="Update Hospital" class="btn btn-primary">
+          <input type="submit" name="doc_sub" value="Update Availiability" class="btn btn-primary">
         </form>
       </div>
-       <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
+      <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
+      <form class="form-group" method="post" action="func1.php">
+                <div class="col-md-4"><label>Various Programs:</label></div>
+                  <div class="col-md-8">
+                   <select name="assigned Patients" class="form-control" >
+                      <option value="Name1">Rajesh</option>
+                      <option value="Name2">Ramesh</option>
+                      <option value="Name3">Mahesh</option>
+                      <option value="Name4">Suresh</option>
+                    </select>
+                  </div><br><br>
+                  
+            </form>
+      </div>
        
        
        </div>
