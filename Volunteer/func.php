@@ -23,7 +23,7 @@ if(isset($_POST['update_data']))
 	if($result)
 		header("Location:updated.php");
 }
-/*function display_docs()
+function display_docs()
 {
 	global $con;
 	$query="select * from doctb";
@@ -33,7 +33,7 @@ if(isset($_POST['update_data']))
 		$name=$row['name'];
 		echo '<option value="'.$name.'">'.$name.'</option>';
 	}
-} */
+}
 if(isset($_POST['doc_sub']))
 {
 	$name=$_POST['name'];
