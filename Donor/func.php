@@ -2,50 +2,49 @@
 session_start();
 $con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['login_submit'])){
-	$username=$_POST['username'];
-	$password=$_POST['password'];
-	$query="select * from donor where uname='$username' and pwd='$password';";
-	$result=mysqli_query($con,$query);
-	if(mysqli_num_rows($result)==1)
-	{
-		$_SESSION['username']=$username;
-		header("Location:admin-panel.php");
-	}
-	else
-		header("Location:error.php");
+  $username=$_POST['username'];
+  $password=$_POST['password'];
+  $query="select * from logintb where username='$username' and password='$password';";
+  $result=mysqli_query($con,$query);
+  if(mysqli_num_rows($result)==1)
+  {
+    $_SESSION['username']=$username;
+    header("Location:admin-panel.php");
+  }
+  else
+    header("Location:error.php");
 }
 if(isset($_POST['update_data']))
 {
-	$contact=$_POST['contact'];
-	$status=$_POST['status'];
-	$query="update appointmenttb set payment='$status' where contact='$contact';";
-	$result=mysqli_query($con,$query);
-	if($result)
-		header("Location:updated.php");
+  $contact=$_POST['contact'];
+  $status=$_POST['status'];
+  $query="update appointmenttb set payment='$status' where contact='$contact';";
+  $result=mysqli_query($con,$query);
+  if($result)
+    header("Location:updated.php");
 }
 function display_docs()
 {
-	global $con;
-	$query="select * from doctb";
-	$result=mysqli_query($con,$query);
-	while($row=mysqli_fetch_array($result))
-	{
-		$name=$row['name'];
-		echo '<option value="'.$name.'">'.$name.'</option>';
-	}
+  global $con;
+  $query="select * from doctb";
+  $result=mysqli_query($con,$query);
+  while($row=mysqli_fetch_array($result))
+  {
+    $name=$row['name'];
+    echo '<option value="'.$name.'">'.$name.'</option>';
+  }
 }
 if(isset($_POST['doc_sub']))
 {
-	$contact=$_POST['contact'];
-
-	$query="insert into doctb(name)values('$name')";
-	$result=mysqli_query($con,$query);
-	if($result)
-		header("Location:adddoc.php");
+  $contact=$_POST['contact'];
+  $query="insert into doctb(name)values('$name')";
+  $result=mysqli_query($con,$query);
+  if($result)
+    header("Location:adddoc.php");
 }
 function display_admin_panel(){
     
-	echo '<!DOCTYPE html>
+  echo '<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -83,11 +82,10 @@ function display_admin_panel(){
     <div class="row">
   <div class="col-md-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal and Bank Details Identification</a>
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal  Details </a>
       <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Donation Used</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Feedback</a>
 
-
+       <a class="list-group-item list-group-item-action" id="list-feedback-list" data-toggle="list" href="#feedback" role="tab" aria-controls="settings">Feedback</a>
     </div><br>
   </div>
   <div class="col-md-8">
@@ -99,10 +97,8 @@ function display_admin_panel(){
               <center><h4>Fill in Details</h4></center><br>
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
-                 <div class="col-md-4"><label>User Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="uname"></div><br><br>  
-                  <div class="col-md-4"><label>Password:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="pwd"></div><br><br>
+                  <div class="col-md-4"><label>First Name:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
                   <div class="col-md-4"><label>Contact:</label></div>
@@ -140,7 +136,6 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text" class="form-control" name="pan_no"></div><br><br> 
                  
                  
-
                   <br><br><br>
                   <div class="col-md-4">
                     <input type="submit" name="entry_submit" value="Create new entry" class="btn btn-primary" id="inputbtn">
@@ -191,7 +186,16 @@ function display_admin_panel(){
       
         </form>
       </div>
-       <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">
+       <div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="list-attend-list">
+      <form class="form-group" method="post" action="func1.php">
+                <div class="col-md-4"><label>Feedback:</label></div>
+                  <div class="col-md-8">
+                   <textarea rows="4" cols="50" name="feedback" placeholder="Please give your Feedback here" autofocus> </textarea>
+                   <input type="submit" name="feedback_submit" value="Submit" >
+                  </div><br><br>
+                  
+            </form>
+      </div>
        
        
        </div>

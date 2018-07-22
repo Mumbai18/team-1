@@ -4,7 +4,7 @@ $con=mysqli_connect("localhost","root","","hmsdb");
 if(isset($_POST['login_submit'])){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$query="select * from volunteer where username='$username' and password='$password';";
+	$query="select * from volunteer where uname='$username' and pwd='$password';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
@@ -23,7 +23,7 @@ if(isset($_POST['update_data']))
 	if($result)
 		header("Location:updated.php");
 }
-function display_docs()
+/*function display_docs()
 {
 	global $con;
 	$query="select * from doctb";
@@ -33,7 +33,7 @@ function display_docs()
 		$name=$row['name'];
 		echo '<option value="'.$name.'">'.$name.'</option>';
 	}
-}
+} */
 if(isset($_POST['doc_sub']))
 {
 	$name=$_POST['name'];

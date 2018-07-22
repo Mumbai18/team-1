@@ -34,10 +34,11 @@ function display_docs()
 		echo '<option value="'.$name.'">'.$name.'</option>';
 	}
 }
-if(isset($_POST['doc_sub']))
+if(isset($_POST['prgm_info']))
 {
-	$name=$_POST['name'];
-	$query="insert into doctb(name)values('$name')";
+	$name=$_POST['uname'];
+  $program =$_POST['prgms'];
+	$query="insert into program(uname,prgms)values('$uname','$prgms')";
 	$result=mysqli_query($con,$query);
 	if($result)
 		header("Location:adddoc.php");
@@ -69,7 +70,7 @@ function display_admin_panel(){
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="enter contact number" aria-label="Search" name="contact">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter Location details here" aria-label="Search" name="location">
       <input type="submit" class="btn btn-outline-light my-2 my-sm-0 btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
     </form>
   </div>
@@ -153,23 +154,27 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
+            <div class="col-md-4"><label>UserName:</label></div>
+                  <div class="col-md-8">
+                  <input type="text" name="uname" placeholder="Enter UserName" >
+                  <br><br>
                 <div class="col-md-4"><label>Various Programs:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
+                   <select name="prgms" class="form-control" >
                       <option value="Finance_Towards_Treatment">Finance Towards Treatment</option>
                       <option value="Nutritional_Support">Nutritional Support</option>
                       <option value="Childcare_Support">Child Care Support</option>
                       <option value="In_Giving_Kind_Program">In Kind Giving Program</option>
                     </select>
                   </div><br><br>
-                  <input type="submit" name="doc_sub" value="Update Program" class="btn btn-primary">
+                  <input type="submit" name="prgm_info" value="Update Program" class="btn btn-primary">
             </form>
           </div>
         </div><br><br>
       </div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        <div class="col-md-4"><label>Various Programs:</label></div>
+        <div class="col-md-4"><label>Various Hospitals:</label></div>
                   <div class="col-md-8">
                    <select name="doctor" class="form-control" >
                       <option value="tata Memorial Service">Tata Memorial Service</option>
