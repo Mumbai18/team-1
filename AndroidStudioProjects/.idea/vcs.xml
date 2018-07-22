@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AndroidViewHover" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FABRevealLayout" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FirebaseAuthUI/FirebaseAuthUI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Tooltip" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-CardView" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-flip" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-page-curl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/zoomage" vcs="Git" />
+  </component>
+</project>

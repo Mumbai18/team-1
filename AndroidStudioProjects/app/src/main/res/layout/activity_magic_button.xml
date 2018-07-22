@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="top"
+    android:background="@color/yellow"
+    tools:context=".MagicButtonActivity">
+
+    <com.spark.submitbutton.SubmitButton
+        android:id="@+id/btnTick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Submit"
+        android:layout_gravity="center"
+        android:textColor="@color/gray"
+        app:sub_btn_background="@color/white"
+        app:sub_btn_duration="3000"
+        app:sub_btn_line_color="@color/green"
+        app:sub_btn_ripple_color="@color/green"
+        app:sub_btn_tick_color="@color/white" />
+
+    <com.varunest.sparkbutton.SparkButton
+        android:id="@+id/spark_button"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:sparkbutton_activeImage="@drawable/active_image"
+        app:sparkbutton_inActiveImage="@drawable/inactive_image"
+        app:sparkbutton_iconSize="100dp"
+        app:sparkbutton_primaryColor="@color/red"
+        app:sparkbutton_secondaryColor="@color/blue" />
+
+
+</LinearLayout>
