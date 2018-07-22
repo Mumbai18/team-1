@@ -24,17 +24,21 @@ class Program:
             'amount': amount,
         })
         # Call Chain
+        requests.post(url=host+'/transactions/new', data=self.current_transactions)
 
     def new_node(self, share, name):
         self.share = share
         self.id = name
+        nodes = {}
         data = {}
         data['share'] = self.share
         data['id'] = self.name
         data['previous'] = self.previous
         data['current'] = self.current
         data['isMedia'] = self.isMedia
+        nodes['data'] = data
         # Call Chain
+        requests.post(url=host+'nodes/register/', data=nodes)
 
 
 class Media:
@@ -52,14 +56,18 @@ class Media:
             'amount': amount,
         })
         # Call Chain
+        requests.post(url=host+'/transactions/new', data=self.current_transactions)
 
     def new_node(self, init, name):
         self.init = init
         self.id = name
+        nodes = {}
         data = {}
         data['init'] = self.init
         data['id'] = self.name
         data['previous'] = self.previous
         data['current'] = self.current
         data['isMedia'] = self.isMedia
+        nodes['data'] = data
         # Call Chain
+        requests.post(url=host+'nodes/register/', data=nodes)
