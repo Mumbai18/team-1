@@ -47,6 +47,16 @@ class Allockchain:
             'isMedia': node['isMedia']
         }
         self.proof[node['id']] = node['share']
+        return
+
+    def register_media_node(self, node):
+        self.nodes[node['id']] = {
+            'current': node['current'],
+            'previous': node['previous'],
+            'isMedia': node['isMedia']
+        }
+        self.proof[node['id']] = node['init']
+        return
 
     @property
     def last_block(self):
@@ -95,8 +105,7 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
-    values = request.get_json()
-
+    # values = request.get_json()
     required = ['id', 'amount']
     if not all(k in values for k in required):
         return 'Missing values', 400
@@ -112,15 +121,15 @@ def full_chain():
     response = {
         'chain': allockchain.chain,
         'length': len(allockchain.chain),
+        'nodes': allockchain.nodes,
     }
     return jsonify(response), 200
 
 
-@app.route('/nodes/register', methods=['POST'])
-def register_nodes():
-    values = request.get_json()
-
-    node = values.get('data')
+@app.route('/nodes/test', methods=['POST'])
+def test():
+    values = {"data": {"share": 0.6, "id": "Finance", "previous": 0, "current": 0, "isMedia": False}}
+    node = values["data"]
     if node is None:
         return "Error: Please supply a valid list of nodes", 400
 
@@ -133,6 +142,7 @@ def register_nodes():
         'message': 'New node has been added',
         'total_nodes': list(allockchain.nodes),
     }
+    print(response)
     return jsonify(response), 201
 
 
