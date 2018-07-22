@@ -21,15 +21,15 @@
 <?php
 include("func.php");
 if(isset($_POST['entry_submit'])){
-  $fname=$_POST['fname']; echo $fname;
-  $lname=$_POST['lname']; echo $lname;
-  $age=$_POST['age']; echo $age;
-  $contact=$_POST['contact']; echo $contact;
-  $cancer=$_POST['cancer']; echo $cancer;
-  $cancer_stage=$_POST['cancer_stage']; echo $cancer_stage;
-  $sex=$_POST['sex']; echo $sex;
-  $location=$_POST['location']; echo $location;
-  $income=$_POST['income']; echo $income;
+  $fname=$_POST['fname'];
+  $lname=$_POST['lname'];
+  $age=$_POST['age'];
+    $contact=$_POST['contact'];
+  $cancer=$_POST['cancer']; 
+  $cancer_stage=$_POST['cancer_stage'];
+  $sex=$_POST['sex'];
+  $location=$_POST['location'];
+  $income=$_POST['income'];
   $query="insert into appointmenttb(fname,lname,age,contact,cancer,cancer_stage,sex,location,income) values ('$fname','$lname','$age','$contact','$cancer','$cancer_stage','$sex','$location',$income)";
   $result=mysqli_query($con,$query);
   if($result)
