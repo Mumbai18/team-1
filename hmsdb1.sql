@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2018 at 05:48 AM
+-- Generation Time: Jul 22, 2018 at 02:08 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -49,8 +49,7 @@ CREATE TABLE `appointmenttb` (
 INSERT INTO `appointmenttb` (`id`, `fname`, `lname`, `age`, `contact`, `cancer`, `cancer_stage`, `sex`, `location`, `income`, `verify`) VALUES
 (1, 'Rajesh', 'Raj', '30', '566423322', 'Bladder Cancer', 'Stage 1', 'Male', 'Ghatkopar', 10000, 'Not Verified'),
 (2, 'Ramesh', 'Chanda', '35', '123456789', 'Kidney', 'Stage 3', 'Female', 'location', 10000, 'verify'),
-(3, 'Ramesh', 'Prasad', '30', '1235566858', 'Bladder Cancer', 'Stage 3', 'Female', 'location', 3000, 'verify'),
-(4, 'Nigamm', 'Shah', '23', '1235566858', 'Bladder Cancer', 'Stage 2', 'Male', 'Goregaon', 10000, '');
+(3, 'Ramesh', 'Prasad', '30', '1235566858', 'Bladder Cancer', 'Stage 3', 'Female', 'location', 3000, 'verify');
 
 -- --------------------------------------------------------
 
@@ -112,26 +111,6 @@ INSERT INTO `logintb` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `program`
---
-
-CREATE TABLE `program` (
-  `id` int(10) NOT NULL,
-  `uname` varchar(40) NOT NULL,
-  `prgms` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `program`
---
-
-INSERT INTO `program` (`id`, `uname`, `prgms`) VALUES
-(1, '', ''),
-(2, '', '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `volunteer`
 --
 
@@ -175,12 +154,6 @@ ALTER TABLE `donor`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `program`
---
-ALTER TABLE `program`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `volunteer`
 --
 ALTER TABLE `volunteer`
@@ -194,19 +167,13 @@ ALTER TABLE `volunteer`
 -- AUTO_INCREMENT for table `appointmenttb`
 --
 ALTER TABLE `appointmenttb`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `program`
---
-ALTER TABLE `program`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `volunteer`
