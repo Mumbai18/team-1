@@ -213,9 +213,9 @@ footer {
   <h4>V Care nourishes a cancer patient's mind and spirit. <br> It is a voluntary support. V Care works meaningfully and diligently with all its stakeholders, patients, doctors, nurses, hospital administrative staff, indivusual donors, corporates, charitable trusts, social organizations, NGOs, similar international and national organizations, and above all, its volunteers.</h4>
     </div>
     <div>
-      <p><input type="button" class="btn btn-info" value="Admin Login"></p>
-      <p><input type="button" class="btn btn-info" value="Volunteer Login"></p>
-      <p><input type="button" class="btn btn-info" value="Donor Login"></p>
+      <p><a href="Admin/index.php" class="btn btn-info" role="button">Admin Login</a></p>
+      <p><a href="Donor/index.php" class="btn btn-info" role="button">Donor Login</a></p>
+      <p><a href="Volunteer/index.php" class="btn btn-info" role="button">Volunteer Login</a></p>
       </div>
   </div>
 </div>

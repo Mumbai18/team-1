@@ -20,7 +20,7 @@
             <img src="images/vcare_logo.jpg" class="card-img-top">
             <div class="card-body">
               <center>
-              <h5>Admin Login</h5><br>
+              <h5>Volunteer Login</h5><br>
               <form class="form-group" method="post" action="func.php">
                 <div class="row">
                   <div class="col-md-4"><label>Username: </label></div>
@@ -29,7 +29,6 @@
                   <div class="col-md-8"><input type="password" class="form-control" name="password" placeholder="enter password" required/></div><br><br><br>
                 </div>
                 <center><input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary">
-                  <input type="submit" id="inputbtn" name="login_submit" value="Login" class="btn btn-primary">
                 </center>
               </form>
             </center>

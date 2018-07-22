@@ -20,7 +20,7 @@
             <img src="images/vcare_logo.jpg" class="card-img-top">
             <div class="card-body">
               <center>
-              <h5>Admin Login</h5><br>
+              <h5>Donor Login</h5><br>
               <form class="form-group" method="post" action="func.php">
                 <div class="row">
                   <div class="col-md-4"><label>Username: </label></div>
