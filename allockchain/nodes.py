@@ -79,4 +79,4 @@ class Media:
 if __name__ == '__main__':
     p = Program()
     p.new_node(share=0.6, id_name="Finance")
-
+    p.new_transaction(amount=14000)

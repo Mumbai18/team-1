@@ -88,7 +88,7 @@ def mine():
     proof = allockchain.proof
 
     for i, transactions in enumerate(allockchain.current_transactions):
-        allockchain.current_transactions[i].amount *= proof[allockchain.current_transactions[i].id]
+        allockchain.current_transactions[i]["amount"] *= proof[allockchain.current_transactions[i]["id"]]
 
     previous_hash = allockchain.hash(last_block)
     block = allockchain.new_block(proof, previous_hash)
@@ -105,10 +105,11 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
-    # values = request.get_json()
-    required = ['id', 'amount']
-    if not all(k in values for k in required):
-        return 'Missing values', 400
+    # # values = request.get_json()
+    # required = ['id', 'amount']
+    # if not all(k in values for k in required):
+    #     return 'Missing values', 400
+    values = {"id": "Finance", "amount": 14000}
 
     index = allockchain.new_transaction(values['id'], values['amount'])
 
